@@ -12,19 +12,25 @@ def pos_dec_to_binary(decimal,bit_list):
     
 #why does this not work? Fix it!
 def countdown(number):
-    print(number)
-    time.sleep(1)
-    countdown(number-1)
+    if number <= 0:
+        return number
+    else:
+        print(number)
+        time.sleep(1)
+        countdown(number-1)
 
 
 #try to complete this
 def fibonacci(n):
-    #base case
-    if n == 0:
+    if n == 0:#base case 1
         return 0
-    elif n == 1:
+    elif n == 1:#base case 2
         return 1
-    #recursive case: the fibonacci number is the sum of the previous 2
+    else:# recursive case
+        return fibonacci(n-1) + fibonacci(n-2)
+
+#for i in range(int(input(()))): # number inputted will be the nth term of the fibonachi returned
+#    print(fibonacci(i))         #prints each time, looks nicer hehe
 
 #triangular numbers
 def triangular(n):
