@@ -76,7 +76,7 @@ def is_palendromic(string):
 
 
 testword = "racecar"
-is_palendromic(testword)
+print(is_palendromic(testword))
 
 
 
