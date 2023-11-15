@@ -67,27 +67,22 @@ def factorial(input_number):
 
 def is_palendromic(string):
     if len(string) <= 1:
-        return "true"
+        return "is palendromic"
     else:
-        if string[1] == string[:-1]:
+        if string[0:1] == string[len(string)-1:len(string)]:
             return is_palendromic(string[1:-1])
         else:
             return "not palendromic"
 
 
-testword = "racecar"
-print(is_palendromic(testword))
+#testword = ""  # dave this makes me want to die but i managerd to figure it out in the end, it actually made me think though
+#print(is_palendromic(testword))
+# PPS I DESERVE A HUG FOPR THIS 
 
-
-
-
-#if string == string[::-1]:
-#return "True"
+#if string == string[::-1]: #PS I KNOW YOU KNOW ABOUT THIS YOU LITTLE SHIT ITS SO MUCH BETTER THAN THIS RECURSION SHIT RAHHHHHHHH
+#   return "True"
 #else:
-#return "False"
-
-
-
+#   return "False" MORE EFFICIENT AND IT MAKES ME SMILE AND IT DIDNT TAKE 15 MINS TO FIGURE OUT 
 
 
 #try to complete a recursive linear search, returning the index of the item, or -1
