@@ -9,7 +9,11 @@ def pos_dec_to_binary(decimal,bit_list):
     else:
         bit_list.append(decimal%2)
         return pos_dec_to_binary(decimal//2,bit_list)
-    
+
+
+
+
+
 #why does this not work? Fix it!
 def countdown(number):
     if number <= 0:
@@ -18,6 +22,11 @@ def countdown(number):
         print(number)
         time.sleep(1)
         countdown(number-1)
+
+
+#countdown(10)
+
+
 
 
 #try to complete this
@@ -32,21 +41,54 @@ def fibonacci(n):
 #for i in range(int(input(()))): # number inputted will be the nth term of the fibonachi returned
 #    print(fibonacci(i))         #prints each time, looks nicer hehe
 
+
+
 #triangular numbers
 def triangular(n):
-    #base case
-    #recursive case
-    pass
+    if n <= 1:      #basec
+        return 1
+    else:           #recursed
+        return n + triangular(n-1)
+
+
+# print(triangular(4))          this works and it fills me with joy
 
 #try to complete this
 def factorial(input_number):
-    #base case
-    
-    #recursive case
-    pass
+    if input_number <= 1:
+        return 1            #base case
+    else:
+        return input_number * factorial(input_number-1)     #recursive case
+
+#print(factorial(4))            #this works and it fills me with smiles
+
+
+
 
 def is_palendromic(string):
-    pass
+    if len(string) <= 1:
+        return "true"
+    else:
+        if string[1] == string[:-1]:
+            return is_palendromic(string[1:-1])
+        else:
+            return "not palendromic"
+
+
+testword = "racecar"
+is_palendromic(testword)
+
+
+
+
+#if string == string[::-1]:
+#return "True"
+#else:
+#return "False"
+
+
+
+
 
 #try to complete a recursive linear search, returning the index of the item, or -1
 def linear_search_recursive(items, start_index, end_index, search_item):
@@ -54,6 +96,8 @@ def linear_search_recursive(items, start_index, end_index, search_item):
     #recursive case:
 
     pass
+
+
 
 
 def binary_search_recursive(items, start_index, end_index, search_item):
@@ -75,6 +119,9 @@ def binary_search_recursive(items, start_index, end_index, search_item):
   #  return binary_search_recursive(items, ????????????, ????????????, search_item)
   pass
 
+
+
+
 """EXTENSION: Euclid's algorithm. The greatest common divisor (gcd) of two positive integers is the largest integer
 that divides evenly into both of them. For example, the gcd(102, 68) = 34.
 We can efficiently compute the gcd using the following property, which holds for positive integers p and q:
@@ -87,5 +134,4 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 #print("".join(str(i) for i in pos_dec_to_binary(1234,[])))
 #
 #print (factorial(4))
-#countdown(10)
 #print(binary_search_recursive([1,2,3,4,54,56,58],0,6,1))
