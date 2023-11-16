@@ -86,13 +86,17 @@ def is_palendromic(string):
 
 
 #try to complete a recursive linear search, returning the index of the item, or -1
-def linear_search_recursive(items, start_index, end_index, search_item):
-    #base cases
-    #recursive case:
+def linear_search_recursive(items, search_item, n):
+    n =+ 1
+    if items[0:] == search_item:
+        return "position: " + n 
+    elif len(items) <= 0:
+        return "false"
+    else:
+        x = len(items) + 1
+        return linear_search_recursive(items[1:x], search_item, n)
 
-    pass
-
-
+#print(linear_search_recursive([1,2,3,4,5,6,7,8,9],3,-1))
 
 
 def binary_search_recursive(items, start_index, end_index, search_item):
