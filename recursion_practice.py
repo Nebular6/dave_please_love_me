@@ -88,44 +88,39 @@ def is_palendromic(string):
 #try to complete a recursive linear search, returning the index of the item, or -1
 def linear_search_recursive(items, search_item, n):
     n =+ 1
-    if items[0:] == search_item:
-        return "position: " + n 
+    if items[0] == search_item:
+        return print("position ",n,)
     elif len(items) <= 0:
         return "false"
     else:
-        x = len(items) + 1
+        x = len(items)
         return linear_search_recursive(items[1:x], search_item, n)
 
-#print(linear_search_recursive([1,2,3,4,5,6,7,8,9],3,-1))
+#print(linear_search_recursive([1,2,3,4,5,6,7,8,9],10,-1))
 
 
-def binary_search_recursive(items, start_index, end_index, search_item):
-  """ a recursive binary search, returning the index of the item, or -1 if not in list. 
-  The start index should be 0 and the end index should be 1 less than the length of the list."""
-  # base case 1: item not in list
-  # TODO use start_index and end_index to find out if the sublist is of size 0 or less and return appropriate int
-  #if ______:
-  #  return _____
-  # TODO work out middle index of the sublist
-  # middle_index = 
-  # TODO from that, set current item
-  #current_item = 
-  # TODO base case 2: find out if current item is the search item and return the appropriate index
-  # recursive cases: do a BS on a subset of the list by tweaking appropriate start or end index
-  #if current_item < search_item:
-  #  return binary_search_recursive(items, ????????????, ????????????, search_item)
-  #else:
-  #  return binary_search_recursive(items, ????????????, ????????????, search_item)
-  pass
+def binary_search_recursive(items, n, search_item):
+    n=+1
+    current_list_lenth=len(items)
+    midway = round((current_list_lenth / 2))
+    if items[midway] == search_item:
+        return "in list"
+    elif items[midway] < search_item:
+        return binary_search_recursive(items[midway:], n, search_item)
+    elif items[midway] < search_item:
+        return binary_search_recursive(items[:midway], n, search_item)
+    else:
+        return "not in list sorry"
 
 
 
+print(binary_search_recursive([1,2,3,4,5,6,7,8,9,10],-1,4))
 
-"""EXTENSION: Euclid's algorithm. The greatest common divisor (gcd) of two positive integers is the largest integer
-that divides evenly into both of them. For example, the gcd(102, 68) = 34.
-We can efficiently compute the gcd using the following property, which holds for positive integers p and q:
+#"""EXTENSION: Euclid's algorithm. The greatest common divisor (gcd) of two positive integers is the largest integer
+#that divides evenly into both of them. For example, the gcd(102, 68) = 34.
+#We can efficiently compute the gcd using the following property, which holds for positive integers p and q:
 
-If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
+#If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 
 #tests
 #print(pos_dec_to_binary(1234,[]))
@@ -134,3 +129,4 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 #
 #print (factorial(4))
 #print(binary_search_recursive([1,2,3,4,54,56,58],0,6,1))
+#
